@@ -1,4 +1,4 @@
-# Admin-Dashboard
+# Admin-Dashboard Using Django
 # Admin Dashboard Documentation
 
 ## Overview
