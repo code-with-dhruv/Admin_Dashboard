@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block random %}
+    <!--#################### Main section################ -->
+    
+        <!-- ##################SALES################# -->
+       
+        <!-- ###############Expenses############### -->
+        
+        <!--################################INCOME####################  -->
+        
+        <!-- end of income -->
+      </div>
+      <!-- end of insights -->
+      <div class="recent-order">
+        <h2>All-Orders</h2>
+        <table id="table1">
+          <thead>
+            <tk>
+              <th>Customer</th>
+              <th>Product Name</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th></th>
+            </tk>
+          </thead>
+          {% for item in orde %}
+          <tr class="my-row">
+            <td>{{item.customer}}</td>
+            <td>{{item.product}}</td>
+            <td>{{item.date_created}}</td>
+            <td><span style='color:green'>{{item.status}}
+
+        </tr>
+        {% endfor %} 
+          <tbody id="tbody1">
+ 
+    <!-- END OF MAIN -->
+          
+          {% endblock %}
+
+</html>

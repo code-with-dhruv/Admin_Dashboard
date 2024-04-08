@@ -1,0 +1,130 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static "style_1.css" %}"/>
+{% comment %}<style>
+     body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f8f8f8;
+      }
+      
+      .container {
+        border: 1px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      
+      .container::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      .container img {
+        max-width: 40px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      
+      .container img.right {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+      
+      .time-right {
+        float: right;
+        color: #aaa;
+      }
+      
+      .time-left {
+        float: left;
+        color: #999;
+      }
+      
+</style> {% endcomment %}
+</head>
+<body>
+
+
+
+
+ <div class="login-container">
+  <style>
+    {% comment %}
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f6f6f9;
+    padding: 20px;
+    } 
+    h2{
+        text-align : center ;
+    } {% endcomment %}
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffdd0d;
+        color: black;
+        text-decoration: none;
+        border-radius: 20px;
+        text-align:center;
+        cursor:pointer;
+      }
+      
+    </style>
+
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label><b>Project Name</b></label>
+        <input type="text" name="room_name" id="room_name" width="100px" />
+        <label><b>Username</b></label>
+        <input type="text" name="username" id="username" width="100px" />
+        <br>
+        
+        <input type="submit" class="button" value="Enter Room">
+        <br>
+        <a href="index" class="button">Back To Dashboard</a>
+    </form>
+    {% comment %} <div >
+        <h2>Messenger</h2>
+    </div> {% endcomment %}
+</div>
+
+
+</body>
+
+
+</html>

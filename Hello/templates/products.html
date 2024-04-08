@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block random%}
+<div class="recent-order">
+    <h2>All-Orders</h2>
+    <table id="table1">
+      <thead>
+        <tk>
+          <th>Product Name</th>
+          <th>Product Number</th>
+          <th>Price</th>
+          
+          <th>Date</th>
+          <th></th>
+        </tk>
+      </thead>
+      <tbody id="tbody1">
+
+         {% for item in item %}
+         <tr class="my-row">
+            <td>{{item.name}}</td>
+            <td>{{item.number}}
+            
+            <td>{{item.price}}</td>
+
+            <td><span style='color:green'>{{item.date_created}}
+
+        </tr>
+        {% endfor %} 
+      
+      {% endblock %}

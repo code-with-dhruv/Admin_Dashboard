@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{%block random%}
+<div class="recent-order">
+    <h2>Customers
+    </h2>
+    <table id="table1">
+      <thead>
+        <tk>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Email Id</th>
+          <th>date Created</th>
+          <th></th>
+        </tk>
+      </thead>
+      <tbody id="tbody1">
+
+         {% for cust in cust %}
+         <tr class="my-row">
+            <td>{{cust.name}}</td>
+            <td>{{cust.phone}}</td>
+            <td>{{cust.email}}</td>
+            <td><span style='color:green'>{{cust.date_created}}
+
+        </tr>
+        {% endfor %} 
+      
+      {% endblock %}

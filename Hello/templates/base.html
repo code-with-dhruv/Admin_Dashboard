@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{% static "style.css" %}"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+
+ <!-- Bootstrap CSS -->
+ {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> {% endcomment %}
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          
+          <h2>C<span class="danger">board</span></h2>
+        </div>
+        <div class="close" id="close-btn">
+          <span class="material-icons-sharp">close</span>
+        </div>
+        <div class="sidebar">
+          <a href="index">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="customers">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Customers</h3>
+          </a>
+          <a href="orders">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>orders</h3>
+          </a>
+          <a href="analytics">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Projects</h3>
+          </a>
+          <a href="messages">
+            <span class="material-icons-sharp">mail_outline</span>
+            <h3>Messages</h3>
+            <span class="message-count">26</span>
+          </a>
+          <a href="products">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Products</h3>
+          </a>
+          <a href="reports">
+            <span class="material-icons-sharp">report_gmailerrorred</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="settings">
+            <span class="material-icons-sharp">supervisor_account</span>
+            <h3>Suppliers</h3>
+          </a>
+          
+            <a href="">
+              <span class="material-icons-sharp">logout</span>
+              <h3>Logout</h3>
+            </a>
+          </a>
+        </div>
+      </div>
+    </aside>
+    
+    
+    <!--#################### Main section################ -->
+    <main>
+      <h1>Dashboard</h1>
+      <div class="date">
+        <input type="date">
+      </div>
+      <div class="insights">
+        
+        <!-- ##################SALES################# -->
+       
+        <!-- ###############Expenses############### -->
+        
+        <!--################################INCOME####################  -->
+        
+        <!-- end of income -->
+      </div>
+      <!-- end of insights -->
+      <!-- <div class="recent-order">
+        <h2>All-Orders</h2>
+        <table id="table1">
+          <thead>
+            <tk>
+              <th>Product Name</th>
+              <th>Product Number</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th></th>
+            </tk>
+          </thead>
+          <tbody id="tbody1"> -->
+            <!---<tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <var>
+              <tr>
+                <td>Product name</td>
+                <td>83838</td>
+                <td>Due</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+            </var>
+            <tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>--->
+
+          <!-- </tbody>
+        </table>
+        <a href="orders.html">Show All</a>
+      </div>
+    </main> -->
+    <!-- END OF MAIN -->
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp">menu</span>
+
+        </button>
+        <div class="theme-Toggler">
+          
+          <span class="material-icons-sharp active">light_mode</span>
+          <!-- <span class="material-icons-sharp">dark_mode</span> -->
+
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b></b></p>
+            <small class="text-muted">Admin</small>
+            
+          </div>
+        </div>
+        
+      </div>
+
+     {% block Posts %}{% endblock Posts %}
+    {% block body %} {% endblock body %}
+    {% block messag %}{% endblock messag %}
+    {% block message %}{% endblock message %}
+    {% block random %} {% endblock random %}
+    
+    {% block article %}{% endblock article %}
+    
+        <!-- End of TOP -->
+        <!-- recent updates -->
+        
+               
+
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+
+        <script src="{% static "./order.js" %}"></script>
+        <script src="{% static "./script.js" %}"></script>
+
+</body>
+
+</html>

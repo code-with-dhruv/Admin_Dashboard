@@ -1,0 +1,329 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{% static "style.css" %}"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+
+
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          
+          <h2>C<span class="danger">board</span></h2>
+        </div>
+        <div class="close" id="close-btn">
+          <span class="material-icons-sharp">close</span>
+        </div>
+        <div class="sidebar">
+          <a href="index">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="customers">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Customers</h3>
+          </a>
+          <a href="orders">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>orders</h3>
+          </a>
+          <a href="analytics">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Projects</h3>
+          </a>
+          <a href="messages">
+            <span class="material-icons-sharp">mail_outline</span>
+            <h3>Messages</h3>
+            <span class="message-count">26</span>
+          </a>
+          <a href="products">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Products</h3>
+          </a>
+          <a href="reports">
+            <span class="material-icons-sharp">report_gmailerrorred</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="settings">
+            <span class="material-icons-sharp">supervisor_account</span>
+            <h3>Suppliers</h3>
+          </a>
+          
+            <a href="">
+              <span class="material-icons-sharp">logout</span>
+              <h3>Logout</h3>
+            </a>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <!--#################### Main section################ -->
+    <main>
+      <h1>Dashboard</h1>
+      <div class="date">
+        <input type="date">
+      </div>
+      <div class="insights">
+        <!-- ##################SALES################# -->
+        <div class="sales">
+          <span class="material-icons-sharp">
+            analytics</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Sales</h3>
+              <h1>{{sales}}</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>{{sale}}%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text">Last 24 hrs</small>
+        </div>
+        <!-- ###############Expenses############### -->
+        <div class="expenses">
+          <span class="material-icons-sharp">
+            bar_chart</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Expenses</h3>
+              <h1>{{sales}}</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>62%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text">Last 24 hrs</small>
+        </div>
+        <!--################################INCOME####################  -->
+        <div class="income">
+          <span class="material-icons-sharp">
+            stacked_line_chart</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Income</h3>
+              <h1>000000</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38' cy='38' r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>50%</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last 24 hrs</small>
+        </div>
+        <!-- end of income -->
+      </div>
+      <!-- end of insights -->
+      <div class="recent-order">
+        <h2>Recent Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Product Name</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+         
+          {% for item in orde1 %}
+        <tr class="my-row">
+            <td>{{item.customer}}</td>
+            <td>{{item.product}}</td>
+            <td>{{item.date_created}}</td>
+            <td><span style='color:green'>{{item.status}}
+            
+        </tr>
+        
+
+        
+      
+        {% endfor %} 
+      </thead>
+            <!---<tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr>
+            <var>
+              <tr>
+                <td>Product name</td>
+                <td>83838</td>
+                <td>Due</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+            </var>
+            <tr>
+              <td>Product name</td>
+              <td>83838</td>
+              <td>Due</td>
+              <td class="warning">Pending</td>
+              <td class="primary">Details</td>
+            </tr> -->
+
+          </tbody>
+        </table>
+        <a href="orders">Show All</a>
+      </div>
+    </main>
+  
+    <div class="right">
+      <div class="top">
+        <button id="menu-btn">
+          <span class="material-icons-sharp">menu</span>
+
+        </button>
+        <div class="theme-Toggler">
+          
+          <span class="material-icons-sharp active">light_mode</span>
+          <!-- <span class="material-icons-sharp">dark_mode</span> -->
+
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hey, <b>NAME</b></p>
+            <small class="text-muted">Admin</small>
+            <div class="profile-photo">
+              {% comment %} <img src="./images/logo.png" alt="img"> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- End of TOP -->
+        <!-- recent updates -->
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="" alt="">
+
+              </div>
+              <div class="message">
+                <p><b>{{mess.user}}</b>{{mess.value}}</p>
+                <small class="text-muted">{{mess.date}}</small>
+
+              </div>
+            </div>
+              <div class="update">
+                <div class="profile-photo">
+                  <img src="" alt="">
+
+                </div>
+                <div class="message">
+                  <p><b>{{mess2.user}}</b> {{mess2.value}}</p>
+                  <small class="text-muted">{{mess2.date}}</small>
+
+                </div>
+              </div>
+                <div class="update">
+                  <div class="profile-photo">
+                    <img src="" alt="">
+
+                  </div>
+                  <div class="message">
+                    <p><b>{{mess3.user}}</b>{{mess3.value}}</p>
+                    <small class="text-muted">{{mess3.date}}</small>
+
+                  
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sales-analytics">
+              <h2>Sales Analytics</h2>
+              <div class="item online">
+                <div class="icon">
+                  <span class="material-icons-sharp">shopping_cart</span>
+
+                </div>
+                <div class="right">
+                  <div class="info">
+                    <h3>Online Orders</h3>
+                    <small class="text-muted">Last 24 hrs</small>
+                  </div>
+                  <h5 class="success">+39%</h5>
+                  <h3>{{sales}}</h3>
+                </div>
+              </div>
+              <div class="item customers">
+                <div class="icon">
+                  <span class="material-icons-sharp">person</span>
+
+                </div>
+                <div class="right">
+                  <div class="info">
+                    <h3>Customers</h3>
+                    <small class="text-muted">Last 24 hrs</small>
+                  </div>
+                  <h5 class="success">+09%</h5>
+                  <h3>{{sales}}</h3>
+                </div>
+              </div>
+              <div class="item offline">
+                <div class="icon">
+                  <span class="material-icons-sharp">local_mall</span>
+
+                </div>
+                <div class="right">
+                  <div class="info">
+                    <h3>Offline Orders</h3>
+                    <small class="text-muted">Last 24 hrs</small>
+                  </div>
+                  <h5 class="danger">-39%</h5>
+                  <h3>{{sales}}</h3>
+                </div>
+              </div>
+              <a href="addproducts">
+              <div class="item add-product">
+                <div>
+                  
+                  <span  class="material-icons-sharp">add</span>
+                  <h3>Add Product</h3>
+                </div>
+              
+
+              </div></a>
+            </div>
+          </div>
+        </div>
+        <script src="{% static './order.js' %}"></script>
+        <script src="{% static './script.js' %}"></script>
+</body>
+
+</html>
